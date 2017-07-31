@@ -1,0 +1,1 @@
+This project contains introductory exercises on Python.
