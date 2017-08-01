@@ -1,0 +1,1 @@
+This project contains exercises on using if/else statements, as well as for/while loops in Python3.
