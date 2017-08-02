@@ -2,6 +2,9 @@
 def uppercase(str):
     for c in str:
         if ord(c) >= ord('a') and ord(c) < ord('z'):
-            c = chr(ord(c) - 32)  #reassignment to limit the number of print()
+            c = chr(ord(c) - 32)  # reassignment to limit the number of print()
         print("{}".format(c), end="")
     print("")
+
+uppercase("holberton")
+uppercase("Holberton School 98 Battery street")
