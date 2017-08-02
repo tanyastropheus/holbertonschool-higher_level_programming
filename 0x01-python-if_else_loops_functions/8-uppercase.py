@@ -5,6 +5,3 @@ def uppercase(str):
             c = chr(ord(c) - 32)  # reassignment to limit the number of print()
         print("{}".format(c), end="")
     print("")
-
-uppercase("holberton")
-uppercase("Holberton School 98 Battery street")
