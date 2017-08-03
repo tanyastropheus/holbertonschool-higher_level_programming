@@ -4,16 +4,13 @@ if __name__ == "__main__":
     sin = "argument"
     plu = "arguments"
 
-    # 0 arguments
     if len(sys.argv) == 1:
         print("{:d} {}.".format(0, sin))
 
-    # 1 argument
     elif len(sys.argv) == 2:
         print("{:d} {}:".format(1, sin))
         print("{:d}: {}".format(1, sys.argv[1]))
 
-    # more than 1 argument
     else:
         print("{:d} {}:".format(len(sys.argv) - 1, plu))
         for i in range(1, len(sys.argv) + 1):
