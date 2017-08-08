@@ -1,0 +1,1 @@
+This project contains exercises on lists and tuples in Python3.
