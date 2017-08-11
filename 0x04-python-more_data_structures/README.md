@@ -1,0 +1,1 @@
+This project contains exercises on dictionaries and sets in Python3.
