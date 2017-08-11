@@ -10,4 +10,4 @@ def uniq_add(my_list=[]):
             if i != num:
                 sum = sum + i
                 num = i
-                return (sum)
+    return (sum)
