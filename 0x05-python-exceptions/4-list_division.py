@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
-    result = 0  # present to 0 for the exception cases
     for i in range(list_length):
+        result = 0  # present to 0 for the exception cases
         try:
             result = my_list_1[i] / my_list_2[i]
         except TypeError:
