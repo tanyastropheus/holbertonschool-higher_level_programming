@@ -1,0 +1,177 @@
+The ``0-add_integer(a, b)`` module
+=================================
+
+Using ``add_integer``
+---------------------
+
+This is an example text file in reStructuredText format.  First import
+``add_integer`` from the ``0-add_integer`` module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+
+"""Working Scenarios"""
+
+>>> print(add_integer(3, 207))
+210
+
+>>> print(add_integer(-6, 188))
+182
+
+>>> print(add_integer(-459175610593721, -1))
+-459175610593722
+
+>>> print(add_integer(2.4453, -3))
+-1
+
+>>> print(add_integer(59, -0.44))
+59
+
+>>> print(add_integer(-0, -0))
+0
+
+"""Perhaps (1) is not seen as a tuple, since one element typle is (4,)"""
+>>> print(add_integer(22, (1)))
+23
+
+>>> print(add_integer(13, (6.22)))
+19
+
+"""This doesnt work!  Perhaps it's because (3.77,) is tuple, not an int"""
+>>> print(add_integer(98, (3.77,)))
+Traceback (most recent call last):
+	   ...
+TypeError: b must be an integer
+
+>>> print(add_integer(99, (1,)))
+Traceback (most recent call last):
+	   ...
+TypeError: b must be an integer
+
+
+"""This works!  Why?  Maybe it's because we didn't pass 3rd argument"""
+>>> print(add_integer(4.33, 7,  ))
+11
+
+>>> print(add_integer(9, 14, , ,))
+Traceback (most recent call last):
+               ...
+SyntaxError: invalid syntax
+
+
+""" 'None' actually means we passed 3rd argument"""
+>>> print(add_integer(5.6, 8, None))
+Traceback (most recent call last):
+	  ...
+TypeError: add_integer() takes 2 positional arguments but 3 were given
+
+>>> [add_integer(i, i ** 2) for i in range(6)]
+[0, 2, 6, 12, 20, 30]
+
+
+"""Test: check wrong types"""
+
+>>> print(add_integer("", 3.45))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer(9, "@$!"))
+Traceback (most recent call last):
+	   ...
+TypeError: b must be an integer
+
+>>> print(add_integer([2, 3], 93))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer(23, []))
+Traceback (most recent call last):
+	   ...
+TypeError: b must be an integer
+
+>>> print(add_integer([14], 4.6))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer(0, {}))
+Traceback (most recent call last):
+	   ...
+TypeError: b must be an integer
+
+>>> print(add_integer({-8}, 7))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer({6, }, 2))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer((), 2.5))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer((2, 46), 9))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer(5.24, {'a': 6}))
+Traceback (most recent call last):
+	   ...
+TypeError: b must be an integer
+
+>>> print(add_integer(&3, 103))
+Traceback (most recent call last):
+	   ...
+SyntaxError: invalid syntax
+
+>>> print(add_integer(None, 6.7))
+Traceback (most recent call last):
+	   ...
+TypeError: a must be an integer
+
+>>> print(add_integer((2), ("lalala")))
+Traceback (most recent call last):
+	   ...
+TypeError: b must be an integer
+
+
+
+"""Test: Check wrong number of arguments"""
+
+
+>>> print(add_integer( , ))
+Traceback (most recent call last):
+	   ...
+SyntaxError: invalid syntax
+
+>>> print(add_integer())
+Traceback (most recent call last):
+	   ...
+TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+
+>>> print(add_integer(1.8,  ))
+Traceback (most recent call last):
+	   ...
+TypeError: add_integer() missing 1 required positional argument: 'b'
+
+>>> print(add_integer(50))
+Traceback (most recent call last):
+	   ...
+TypeError: add_integer() missing 1 required positional argument: 'b'
+
+>>> print(add_integer(3, 55.2, 0))
+Traceback (most recent call last):
+	   ...
+TypeError: add_integer() takes 2 positional arguments but 3 were given
+
+>>> print(add_integer(3.5, 6, 'a'))
+Traceback (most recent call last):
+	   ...
+TypeError: add_integer() takes 2 positional arguments but 3 were given
