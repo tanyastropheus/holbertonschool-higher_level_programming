@@ -10,7 +10,13 @@ def matrix_divided(matrix, div):
         A new matrix.
         All elements of the new matrix are rounded to 2 decimal places
 
+    Raises:
+        TypeError: when div or elements of lists in matrix is not int/float,
+                   or when rows in the matrix are of different sizes
+        ZeroDivisionError: when div is zero
+
     """
+    type_err = "matrix must be a matrix (list of lists) of integers/floats"
 
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
@@ -19,22 +25,18 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     if len(matrix) == 0:
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(type_err)
 
     for row in matrix:
         if type(row) is not list:
-            raise TypeError(
-                "matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError(type_err)
 
         for i in row:
             if type(i) not in [int, float]:
-                raise TypeError(
-                    "matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(type_err)
 
         if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
-
 
     new_matrix = []
     for row in matrix:

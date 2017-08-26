@@ -9,6 +9,9 @@ def add_integer(a, b):
     Returns:
         int: sum of a and b
 
+    Raises:
+        TypeError: if a or b is not int or float
+
     """
     if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
