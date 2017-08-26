@@ -1,5 +1,17 @@
 #!/usr/bin/python3
 def matrix_divided(matrix, div):
+    """a function that divides all elements of a matrix
+
+    Args:
+        matrix (list): list of lists of integers/floats.
+        div (int/float): a non-zero number that matrix is divided by
+
+    Returns:
+        A new matrix.
+        All elements of the new matrix are rounded to 2 decimal places
+
+    """
+
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
 
