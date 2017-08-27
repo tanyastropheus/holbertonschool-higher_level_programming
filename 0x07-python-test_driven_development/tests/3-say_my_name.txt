@@ -1,0 +1,81 @@
+The ``3-say_my_name`` module
+=================================
+
+Using ``say_my_name``
+---------------------
+
+This is an example text file in reStructuredText format.  First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+"""Test: regular name"""
+>>> say_my_name("Tanya", "Kryukova")
+My name is Tanya Kryukova
+
+"""Test: name with special characters (-/') & long names"""
+>>> say_my_name("lnads'lkjnwelkjsandvlkjaslknjsadljnlkjf", "thisisa-hyphenated-lastname")
+My name is lnads'lkjnwelkjsandvlkjaslknjsadljnlkjf thisisa-hyphenated-lastname
+
+"""Test: space in names"""
+>>> say_my_name("Maria", "Juan Lopez")
+My name is Maria Juan Lopez
+
+"""Test: non-string last name"""
+>>> say_my_name("23", 23)
+Traceback (most recent call last):
+               ...
+TypeError: last_name must be a string
+
+"""Test: non-string first name"""
+>>> say_my_name(True, "Winehouse")
+Traceback (most recent call last):
+               ...
+TypeError: first_name must be a string
+
+"""Test: first name only"""
+>>> say_my_name("Stu")
+My name is Stu 
+
+"""Test: first name with comma"""
+>>> say_my_name("Amy", )
+My name is Amy 
+
+
+"""Test: both names in a sequence"""
+>>> say_my_name(("Jose", "Maldonado"))
+Traceback (most recent call last):
+               ...
+TypeError: first_name must be a string
+
+
+"""Test: one name in sequence"""
+>>> say_my_name({"Meiling"}, "Park")
+Traceback (most recent call last):
+               ...
+TypeError: first_name must be a string
+
+
+"""Test: empty string"""
+>>> say_my_name("", "Lun")
+My name is  Lun
+
+
+"""Test: missing both names"""
+>>> say_my_name()
+Traceback (most recent call last):
+               ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+"""Test: None as name"""
+>>> say_my_name(None)
+Traceback (most recent call last):
+               ...
+TypeError: first_name must be a string
+
+"""Test: more than 2 arguments"""
+>>> say_my_name("one", "two", "three")
+Traceback (most recent call last):
+               ...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
