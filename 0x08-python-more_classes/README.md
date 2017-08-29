@@ -1,0 +1,1 @@
+This project contains additional exercises on classes and objects in Python.
