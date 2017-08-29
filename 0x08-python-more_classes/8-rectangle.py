@@ -12,8 +12,11 @@ class Rectangle:
             height (int): height of the rectangle.
 
         """
-        self.__width = width
-        self.__height = height
+        self.__width = 0  # create default vars and set it to dummy value
+        self.__height = 0  # to show all vars are created inside  __init__
+
+        self.width = width  # calling setter from __init__
+        self.height = height
 
         Rectangle.number_of_instances += 1
 
