@@ -56,11 +56,10 @@ class Rectangle:
         """Function that calculates the area of the rectangle
 
         Returns:
-            self.area (int): area of the rectangle
+            area of the rectangle.
 
         """
-        self.area = self.__width * self.__height
-        return self.area
+        return self.__width * self.__height
 
     def perimeter(self):
         """Function that calculates the perimeter of the rectangle
@@ -68,12 +67,10 @@ class Rectangle:
         if the width or height is zero, the perimeter equals to zero
 
         Returns:
-            self.perimtr (int): perimeter of the rectangle
+            perimeter of the rectangle.
 
         """
 
         if self.__width == 0 or self.__height == 0:
-            self.perimtr = 0
-        else:
-            self.perimtr = 2 * (self.__width + self.__height)
-        return self.perimtr
+            return 0
+        return 2 * (self.__width + self.__height)
