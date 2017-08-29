@@ -84,7 +84,8 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         line = "".join(str(self.print_symbol) * self.__width + '\n')
-        return "{}".format(line * self.__height, end="")
+        end_line = str(self.print_symbol) * self.__width
+        return "{}".format(line * (self.__height - 1) + end_line)
 
     def __repr__(self):
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
