@@ -1,0 +1,1 @@
+This project contains exercises on class inheritance in Python.
