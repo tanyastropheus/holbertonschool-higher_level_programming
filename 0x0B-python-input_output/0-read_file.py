@@ -9,5 +9,5 @@ def read_file(filename=""):
     try:
         with open(filename, encoding='UTF8') as f:
             print(f.read(), end="")
-    except IOError:
+    except (TypeError, IOError):
         print("Please enter a valid file name")
