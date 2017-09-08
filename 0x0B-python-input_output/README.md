@@ -1,0 +1,1 @@
+This project contains exercises on file I/O in Python.
