@@ -6,8 +6,6 @@ def read_file(filename=""):
         filename (str): file to be printed
 
     """
-    try:
-        with open(filename, encoding='UTF8') as f:
-            print(f.read(), end="")
-    except (TypeError, IOError):
-        print("Please enter a valid file name")
+    with open(filename, encoding="UTF8") as f:
+        for line in f:
+            print(line, end="")
