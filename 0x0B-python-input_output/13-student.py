@@ -25,8 +25,8 @@ class Student:
                 if not attrs or k in attrs}
 
     def reload_from_json(self, json):
-        """modifies writable attributes in Student instance based on JSON
-        dictionary representation
+        """updates writable attributes in Student instance for those attributes
+        in JSON dictionary representation
 
         """
-        self.__dict__ = {k: v for k, v in json.items()}
+        self.__dict__.update(json.items())
