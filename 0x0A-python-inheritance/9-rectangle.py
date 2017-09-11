@@ -16,7 +16,9 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def __str__(self):
-        return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
+        return "[{:s}] {:d}/{:d}".format(self.__class__.__name__,
+                                         self.__width, self.__height)
+        # self.__class__.__name__ retrieves the class name of an instance
 
     def area(self):
         return self.__height * self.__width
