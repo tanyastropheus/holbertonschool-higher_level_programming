@@ -30,6 +30,17 @@ True
 []
 
 
+"""check append works"""
+>>> example = MyList()
+>>> example.append(49)
+>>> example.append(14)
+>>> example.append(47)
+>>> example.append(-439)
+>>> print(example)
+[49, 14, 47, -439]
+>>> example.print_sorted()
+[-439, 14, 47, 49]
+
 
 """check print_sorted prints an ascendingly sorted list"""
 >>> example = MyList()
