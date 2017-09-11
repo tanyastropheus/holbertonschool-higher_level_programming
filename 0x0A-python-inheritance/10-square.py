@@ -13,4 +13,5 @@ class Square(Rectangle):
         # from Rectangle and set them to size:
         # __width = size, __height = size
         # so now Square has three private attributes
-        super().__init__(size, size)
+        super().__init__(size, size)  # no need to pass self, since __init__ is
+                                      # acting on super(), which is class Rectangle
