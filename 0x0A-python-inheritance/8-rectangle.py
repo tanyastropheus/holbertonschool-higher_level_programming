@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
-"""module contains class Rectangle inherited from class BaseGeometry"""
+"""
+module contains class Rectangle inherited from class BaseGeometry
+"""
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
+    """class Rectangle"""
     def __init__(self, width, height):
-        if type(width) == int and width > 0:
-            self.__width = width
-        else:
-            raise TypeError("width must be an integer")
-        if type(height) == int and height > 0:
-            self.__height = height
-        else:
-            raise TypeError("height must be an integer")
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
