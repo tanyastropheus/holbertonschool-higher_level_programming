@@ -9,11 +9,6 @@ This is an example text file in reStructuredText format.  First import
 
 	>>> MyList = __import__('1-my_list').MyList
 
-"""check MyList is class"""
->>> example = MyList()
->>> type(example)
-<class 'MyList'>
-
 
 """check MyList inherits from a class list"""
 >>> issubclass(MyList, list)
@@ -43,7 +38,8 @@ True
 [103, 52, 335, 56, 1]
 >>> example.print_sorted()
 [1, 52, 56, 103, 335]
-
+>>> print(example)
+[103, 52, 335, 56, 1]
 
 
 """passing wrong  arguments"""
