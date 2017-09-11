@@ -38,8 +38,36 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 >>> example.integer_validator("nm", 3)
 
 
+"""check integer_validator() raises exception with message for non-int value (tuple)"""
+>>> example = BaseGeometry()
+>>> example.integer_validator("nm", (3,))
 
-"""check integer_validator() raises exception with message for non-int value"""
+
+"""check integer_validator() raises exception with message for non-int value (bool)"""
+>>> example = BaseGeometry()
+>>> example.integer_validator("nm", False)
+
+
+
+"""check integer_validator() raises exception with message for non-int value (list)"""
+>>> example = BaseGeometry()
+>>> example.integer_validator("nm", [3])
+
+
+
+"""check integer_validator() raises exception with message for non-int value (set)"""
+>>> example = BaseGeometry()
+>>> example.integer_validator("nm", {3})
+
+
+
+"""check integer_validator() raises exception with message for non-int value (None)"""
+>>> example = BaseGeometry()
+>>> example.integer_validator("nm", None)
+
+
+
+"""check integer_validator() raises exception with message for non-int value (string)"""
 >>> example = BaseGeometry()
 >>> example.integer_validator("nm", "3")
 Traceback (most recent call last):
@@ -47,9 +75,18 @@ Traceback (most recent call last):
 TypeError: nm must be an integer
 
 
-"""check integer_validator() raises exception with message for value less or equal to 0"""
+"""check integer_validator() raises exception with message for value less than 0"""
 >>> example = BaseGeometry()
 >>> example.integer_validator("nm", -3)
+Traceback (most recent call last):
+	  ...
+ValueError: nm must be greater than 0
+
+
+
+"""check integer_validator() raises exception with message for value equal to  0"""
+>>> example = BaseGeometry()
+>>> example.integer_validator("nm", 0)
 Traceback (most recent call last):
 	  ...
 ValueError: nm must be greater than 0
