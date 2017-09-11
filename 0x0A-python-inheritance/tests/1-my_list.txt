@@ -1,0 +1,57 @@
+The ``1-my_list`` module
+=================================
+
+Using ``MyList``
+---------------------
+
+This is an example text file in reStructuredText format.  First import
+``MyList`` from the ``1-my_list`` module:
+
+	>>> MyList = __import__('1-my_list').MyList
+
+"""check MyList is class"""
+>>> example = MyList()
+>>> type(example)
+<class 'MyList'>
+
+
+"""check MyList inherits from a class list"""
+>>> issubclass(MyList, list)
+True
+
+
+"""check self as an empty list & print_sorted prints a list"""
+>>> example = MyList()
+>>> example
+[]
+
+
+"""check extending empty list"""
+>>> example = MyList()
+>>> example.extend([])
+>>> print(example)
+[]
+>>> example.print_sorted()
+[]
+
+
+
+"""check print_sorted prints an ascendingly sorted list"""
+>>> example = MyList()
+>>> example.extend([103, 52, 335, 56, 1])
+>>> print(example)
+[103, 52, 335, 56, 1]
+>>> example.print_sorted()
+[1, 52, 56, 103, 335]
+
+
+
+"""passing wrong  arguments"""
+>>> example = MyList()
+>>> example.extend([4, 64, 12, 5])
+>>> print(example)
+[4, 64, 12, 5]
+>>> example.print_sorted([2, 34, 6])
+Traceback (most recent call last):
+	  ...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
