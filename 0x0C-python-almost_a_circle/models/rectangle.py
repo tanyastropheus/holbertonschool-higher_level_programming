@@ -56,4 +56,12 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        # what if x, y are not zero?
         return self.width * self.height
+
+    def display(self):
+        # output of print() is sent to stdout (sys.stdout) by default
+        for i in range(self.width):
+            for j in range(self.height):
+                print('#', end="")
+            print()
