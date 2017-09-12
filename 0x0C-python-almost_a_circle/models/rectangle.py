@@ -54,3 +54,6 @@ class Rectangle(Base):
     def y(self, value):
         self.validator("y", value)
         self.__y = value
+
+    def area(self):
+        return self.width * self.height
