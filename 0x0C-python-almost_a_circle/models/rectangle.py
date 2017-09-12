@@ -14,7 +14,7 @@ class Rectangle(Base):
     def validator(self, name, value):
         if type(value) is not int:
             raise TypeError(name + " must be an integer")
-        elif (name == "width" or name == "height") and value <= 0:
+        if (name == "width" or name == "height") and value <= 0:
             raise ValueError(name + " must be > 0")
         elif value < 0:
             raise ValueError(name + " must be >= 0")
