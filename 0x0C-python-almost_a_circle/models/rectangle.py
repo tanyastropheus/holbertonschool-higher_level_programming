@@ -61,12 +61,15 @@ class Rectangle(Base):
 
     def display(self):
         # output of print() is sent to stdout (sys.stdout) by default
-        for i in range(self.width):
-            for j in range(self.height):
-                print('#', end="")
+        for a in range(self.y):
+            print()
+        for i in range(self.height):
+            for j in range(1):
+                print(' ' * self.x, end="")
+                print('#' * self.width, end="")
             print()
 
-    def __str__(self):
+    def __str__(self):  # overloading: overriding __str__ from parent class
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.__class__.__name__, self.id, self.x, self.y,
             self.width, self.height)
