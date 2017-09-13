@@ -73,3 +73,11 @@ class Rectangle(Base):
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.__class__.__name__, self.id, self.x, self.y,
             self.width, self.height)
+
+    def update(self, *args):
+        attrs = [self.id, self.width, self.height, self.x, self.y]
+        i = 0
+        while i < len(args):
+            for attr in attrs:
+                attr = args[i]
+            i += 1
