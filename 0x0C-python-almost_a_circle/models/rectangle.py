@@ -76,8 +76,6 @@ class Rectangle(Base):
 
     def update(self, *args):
         attrs = [self.id, self.width, self.height, self.x, self.y]
-        i = 0
-        while i < len(args):
-            for attr in attrs:
-                attr = args[i]
+        for i in range(0, min(len(attrs), len(args))):
+            attrs[i](args[i])
             i += 1
