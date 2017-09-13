@@ -19,6 +19,7 @@ class Rectangle(Base):
            height (int): height of the rectangle.
            x (int): horizontal (x-axis) offset of the rectangle.
            y (int): vertical (y-axis) offset of the rectangle.
+           id (int): id of the Rectangle instance.
 
         """
         self.width = width
