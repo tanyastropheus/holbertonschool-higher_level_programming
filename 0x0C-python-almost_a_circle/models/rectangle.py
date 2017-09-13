@@ -116,4 +116,4 @@ class Rectangle(Base):
         """
         attrs = ['id', 'width', 'height', 'x', 'y']
         for i in range(min(len(attrs), len(args))):
-            setattr(self, attrs[i], args[i])  # setattr() calls setters
+            setattr(self, attrs[i], args[i])  # setattr() calls setters automatically to validate value
