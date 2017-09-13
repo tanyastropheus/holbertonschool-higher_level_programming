@@ -103,7 +103,7 @@ class Rectangle(Base):
             self.__class__.__name__, self.id, self.x, self.y,
             self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates attributes with variable number of arguments.
 
         Note:
@@ -115,5 +115,12 @@ class Rectangle(Base):
 
         """
         attrs = ['id', 'width', 'height', 'x', 'y']
-        for i in range(min(len(attrs), len(args))):
-            setattr(self, attrs[i], args[i])  # setattr() calls setters automatically to validate value
+        if args:
+            for i in range(min(len(attrs), len(args))):
+                setattr(self, attrs[i], args[i])
+                # setattr() calls setters automatically to validate value
+        else:
+            for k, v in kwargs.items():
+                for i in attrs:
+                    if k == i:
+                        setattr(self, k, v)
