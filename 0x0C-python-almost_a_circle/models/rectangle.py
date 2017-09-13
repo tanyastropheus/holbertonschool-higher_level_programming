@@ -1,10 +1,26 @@
 #!/usr/bin/python3
+"""Module contains class Rectangle inherited from class Base
+
+"""
 
 from models.base import Base
 
 
 class Rectangle(Base):
+    """Produces a rectangle based on given parameters.
+
+    """
+
     def __init__(self, width, height, x=0, y=0, id=None):  # accepts parameters
+        """Initializing instances of class Rectangle.
+
+        Args:
+           width (int): width of the rectangle.
+           height (int): height of the rectangle.
+           x (int): horizontal (x-axis) offset of the rectangle.
+           y (int): vertical (y-axis) offset of the rectangle.
+
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -12,6 +28,13 @@ class Rectangle(Base):
         super().__init__(id)  # calling the parent's init by passing id
 
     def validator(self, name, value):
+        """validates private attributes initiated in __init__.
+
+        Args:
+           name (str): name of the attribute.
+           value (int): value to be validated for the named attribute.
+
+        """
         if type(value) is not int:
             raise TypeError(name + " must be an integer")
         if (name == "width" or name == "height") and value <= 0:
@@ -21,6 +44,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """retrieves and sets private attribute __width."""
         return self.__width
 
     @width.setter
@@ -30,6 +54,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """retrieves and sets private attribute __height."""
         return self.__height
 
     @height.setter
@@ -39,6 +64,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """retrieves and sets private attribute __x."""
         return self.__x
 
     @x.setter
@@ -48,6 +74,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """retrieves and sets private attribute __y."""
         return self.__y
 
     @y.setter
@@ -56,10 +83,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        # what if x, y are not zero?
+        """returns the area value of the Rectangle instance."""
         return self.width * self.height
 
     def display(self):
+        """prints in stdout the Rectangle instance with the character #"""
         # output of print() is sent to stdout (sys.stdout) by default
         for a in range(self.y):
             print()
