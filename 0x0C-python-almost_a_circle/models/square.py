@@ -31,3 +31,26 @@ class Square(Rectangle):
     def __str__(self):
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
             self.__class__.__name__, self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """updates attributes with variable number of arguments.
+
+        Note:
+           1st arg => id attribute.
+           2nd arg => size attribute.
+           3rd arg => x attribute.
+           4th arg => y attribute.
+
+        """
+
+        attrs = ['id', 'size', 'x', 'y']
+
+        if args:
+            for i in range(min(len(attrs), len(args))):
+                setattr(self, attrs[i], args[i])
+                # setattr() calls setters automatically to validate value
+        else:
+            for k, v in kwargs.items():
+                for i in attrs:
+                    if k == i:
+                        setattr(self, k, v)
