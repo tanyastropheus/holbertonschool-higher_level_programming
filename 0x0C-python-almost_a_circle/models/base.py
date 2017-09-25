@@ -54,6 +54,7 @@ class Base:
            json_string (list): list of JSON string representation.
 
         """
-        if json_string is not None or != []:
-            return json.loads(json_string)
-        return "[]"
+        # not json_string -> check if it's empty
+        if not json_string or json_string is None:
+            return "[]"
+        return json.loads(json_string)
