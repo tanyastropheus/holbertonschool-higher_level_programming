@@ -45,3 +45,15 @@ class Base:
                 f.write(cls.to_json_string(list_dict))
             else:
                 f.write("[]")
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation.
+
+        Args:
+           json_string (list): list of JSON string representation.
+
+        """
+        if json_string is not None:
+            return json.loads(json_string)
+        return "[]"
