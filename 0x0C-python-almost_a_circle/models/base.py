@@ -58,3 +58,15 @@ class Base:
         if not json_string or json_string is None:
             return []  # return an empty list, not a string represntn of list
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set.
+
+        Args:
+           **dictionary: a double pointer to a dictionary.
+
+        """
+        i1 = cls(1, 3, 5)
+        i1.update(**dictionary)
+        return i1
