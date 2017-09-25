@@ -33,12 +33,13 @@ class Base:
         """writes the JSON string representation of list_objs to a file.
 
         Args:
-           list_objs (list): list of instances of classes that inherit from Base.
+           list_objs (list): list of instances of classes inheriting from Base.
 
         """
         with open("{}.json".format(cls.__name__), 'w') as f:
             if list_objs is not None:
-                # create a list of dict representation of each instance from list_objs
+                # create a list of dict representation of
+                # each instance from list_objs
                 list_dict = [i.to_dictionary() for i in list_objs]
                 # create JSON string representation of the list of dictionaries
                 f.write(cls.to_json_string(list_dict))
