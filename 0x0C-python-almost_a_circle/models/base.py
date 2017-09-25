@@ -56,5 +56,5 @@ class Base:
         """
         # not json_string -> check if it's empty
         if not json_string or json_string is None:
-            return "[]"
+            return []  # return an empty list, not a string represntn of list
         return json.loads(json_string)
