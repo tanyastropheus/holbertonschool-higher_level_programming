@@ -67,6 +67,9 @@ class Base:
            **dictionary: a double pointer to a dictionary.
 
         """
-        i1 = cls(1, 3)
-        i1.update(**dictionary)
-        return i1
+        if cls.__name__ == "Rectangle":
+            inst = cls(1, 3)
+        elif cls.__name__ == "Square":
+            inst = cls(2)
+        inst.update(**dictionary)
+        return inst
