@@ -67,6 +67,6 @@ class Base:
            **dictionary: a double pointer to a dictionary.
 
         """
-        i1 = cls(1, 3, 5)
+        i1 = cls(1, 3)
         i1.update(**dictionary)
         return i1
