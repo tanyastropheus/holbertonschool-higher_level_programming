@@ -80,6 +80,6 @@ class Base:
         try:
             with open("{}.json".format(cls.__name__), 'r') as f:
                 list_dict = cls.from_json_string(f.read())
-            return  [cls.create(**i) for i in list_dict]
+            return [cls.create(**i) for i in list_dict]
         except:
             return []
