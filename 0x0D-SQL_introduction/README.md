@@ -1,0 +1,1 @@
+This is part I of MySQL exercises.
