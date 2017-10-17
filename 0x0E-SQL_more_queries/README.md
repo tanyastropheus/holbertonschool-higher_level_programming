@@ -1,0 +1,1 @@
+This is PART II of exercises on MySQL focusing on the query operation 'join'.
