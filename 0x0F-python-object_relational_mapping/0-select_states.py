@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 import MySQLdb
+from sys import argv
 # open database connection
-db = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="root",
-                     db="hbtn_0e_0_usa", charset="utf8")
+db = MySQLdb.connect(host="localhost", port=3306, user=argv[1], passwd=argv[2],
+                     db=argv[3], charset="utf8")
 
 # prepare a cursor object using cursor() method
-# enables multiple separate working environs thru the same connection to the DB
 cur = db.cursor()
 
 cur.execute("SELECT * FROM states ORDER BY id ASC")
