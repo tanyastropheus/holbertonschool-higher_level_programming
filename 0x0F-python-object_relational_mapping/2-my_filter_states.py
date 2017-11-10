@@ -3,7 +3,6 @@
 '''module displays data entries that contain matching argument'''
 
 import MySQLdb
-import re
 from sys import argv
 
 if __name__ == "__main__":
