@@ -13,9 +13,9 @@ if __name__ == "__main__":
     # prepare a cursor object using cursor() method
     cur = db.cursor()
 
-    # format WHERE with %s and a list of argument (substitution)
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
-                [argv[4]])
+    # used '{:s}' inside the ""; code is vulnerable to injection attack
+    cur.execute("SELECT * FROM states WHERE name = '{:s}' ORDER BY id ASC".
+                format(argv[4]))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
