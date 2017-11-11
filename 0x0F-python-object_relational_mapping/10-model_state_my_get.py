@@ -31,6 +31,7 @@ if __name__ == "__main__":
     session = Session()
 
     # print state.id corresponding to the specified state.name from commandline
+    # can also use one(), but need to catch the raised exception
     result = session.query(State.id).filter_by(name=argv[4]).first()
 
     if result is None:
