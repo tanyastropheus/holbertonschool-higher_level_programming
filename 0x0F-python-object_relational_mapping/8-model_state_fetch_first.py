@@ -19,9 +19,6 @@ class State(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
 
-    def __str__(self):
-        return "{}: {}".format(self.id, self.name)
-
 if __name__ == "__main__":
     # set up connection to the database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
@@ -36,7 +33,7 @@ if __name__ == "__main__":
     # print the first State object from the database
     try:
         result = session.query(State).first()
-        print(result)
+        print("{}: {}".format(result.id, result.name))
 
     except:
         print("Nothing")
