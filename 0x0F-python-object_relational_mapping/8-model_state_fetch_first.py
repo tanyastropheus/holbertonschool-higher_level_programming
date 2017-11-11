@@ -33,6 +33,7 @@ if __name__ == "__main__":
     # print the first State object from the database
     try:
         result = session.query(State).first()
+        # result is an object of the State class
         print("{}: {}".format(result.id, result.name))
 
     except:
