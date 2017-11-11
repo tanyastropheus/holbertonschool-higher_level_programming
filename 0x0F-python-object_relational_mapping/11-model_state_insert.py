@@ -31,9 +31,13 @@ if __name__ == "__main__":
     session = Session()
 
     # add a data entry to the table
-    LA_state = State(name='Louisiana')
-    session.add(LA_state)
+    new_state = State(name='Louisiana')
+    session.add(new_state)
 
-    LA_state_id = session.query(State.id).filter(
+    # commit the change to the database
+    session.commit()
+
+    # print out id of the newly added state
+    new_id = session.query(State.id).filter(
         State.name == 'Louisiana').one()
-    print(LA_state_id[0])
+    print(new_id[0])
