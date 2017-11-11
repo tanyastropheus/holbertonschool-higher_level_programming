@@ -31,7 +31,7 @@ if __name__ == "__main__":
     session = Session()
 
     # print state.id corresponding to the specified state.name from commandline
-    result = session.query(State.id).filter_by(name=argv[4]).first()
+    result = session.query(State.id).filter_by(name=argv[4]).one()
 
     if result is None:
         print("Not found")
