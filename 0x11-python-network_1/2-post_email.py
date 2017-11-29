@@ -7,7 +7,7 @@ from sys import argv
 
 '''data to POST to the server'''
 data = urllib.parse.urlencode({'email': argv[2]})
-data = data.encode('ascii')
+data = data.encode('utf-8')
 
 try:
     with urllib.request.urlopen(argv[1], data) as response:
