@@ -8,7 +8,7 @@ from sys import argv
 if __name__ == "__main__":
     req = urllib.request.Request(argv[1])
     try:
-        with urllib.request.urlopen(argv[1]) as response:
+        with urllib.request.urlopen(req) as response:
             content = response.read()
             print(content.decode('utf-8'))
     '''display HTTP status code'''
