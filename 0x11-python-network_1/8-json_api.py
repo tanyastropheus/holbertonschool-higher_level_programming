@@ -3,6 +3,7 @@
 
 import requests
 from sys import argv
+import sys
 
 if __name__ == "__main__":
     if len(argv) == 1:
@@ -16,9 +17,8 @@ if __name__ == "__main__":
         name = content.get('name')
     except ValueError:
         print("Not a valid JSON")
-        exit
-
-    if id_num is None or name is None:
+        sys.exit()
+    if not id_num or not name:
         print("No result")
     else:
         print("[{}] {}".format(id_num, name))
