@@ -18,7 +18,7 @@ if __name__ == "__main__":
     except ValueError:
         print("Not a valid JSON")
         sys.exit()
-    if not id_num or not name:
+    if id_num is None or name is None:
         print("No result")
     else:
         print("[{}] {}".format(id_num, name))
