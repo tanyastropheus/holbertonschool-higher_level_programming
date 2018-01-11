@@ -1,19 +1,6 @@
 #!/usr/bin/node
 
 let request = require('request');
+let fs = require('fs');
 
-const options = {
-  url: process.argv[2],
-  method: 'GET',
-  headers: {
-    //    'Accept': 'application/json',
-    'Accept-Charset': 'utf-8'
-  }
-};
-
-request(options, function (err, response, body) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log(body);
-});
+request(process.argv[2]).pipe(fs.createWriteStream(process.argv[3]));
