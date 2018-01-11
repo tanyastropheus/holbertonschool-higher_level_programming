@@ -30,10 +30,10 @@ request(options, function (err, response, body) {
   while (i < tasksCompleted.length) {
     if (tasksCompleted[i]['userId'] === userID) {
       count++;
-      //      console.log("user ID:", userID);
-      //      console.log("count:", count);
-    } else if (count > 0) {
-      userTaskNum[userID] = count;
+    } else {
+      if (count > 0) {
+        userTaskNum[userID] = count;
+      }
       userID++;
       count = 1;
     }
