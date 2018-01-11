@@ -16,14 +16,16 @@ request(options, function (err, response, body) {
     return console.log(err);
   }
   let json = JSON.parse(body);
-  let charWA = 'https://swapi.co/api/people/18/';
   let i = 0;
   let count = 0;
   while (i < json['results'].length) {
     // a list of characters for one episode
     let epChars = json['results'][i]['characters'];
-    if (epChars.includes(charWA)) {
-      count++;
+    let j;
+    for (j = 0; j < epChars.length; j++) {
+      if (epChars[j].endsWith('/18/')) {
+        count++;
+      }
     }
     i++;
   }
