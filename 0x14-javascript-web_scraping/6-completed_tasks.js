@@ -23,7 +23,7 @@ request(options, function (err, response, body) {
       return true;
     }
   });
-  //  console.log(newList);
+
   let i = 0;
   let userID = 1;
   let count = 0;
@@ -32,7 +32,7 @@ request(options, function (err, response, body) {
       count++;
       //      console.log("user ID:", userID);
       //      console.log("count:", count);
-    } else {
+    } else if (count > 0) {
       userTaskNum[userID] = count;
       userID++;
       count = 1;
